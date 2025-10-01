@@ -1,0 +1,1 @@
+{"_invocation_id": "5552d067-e121-4248-be38-d0a86c49b21a", "linked": {"0": {"name": "model.zwift_scout.riders", "type": "model"}, "1": {"name": "model.zwift_scout.int_riders", "type": "model", "succ": [0]}, "2": {"name": "model.zwift_scout.stg_riders", "type": "model", "succ": [1]}}}

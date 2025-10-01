@@ -585,3 +585,188 @@ if rider_id_filter or name_filter:
 
 ---
 
+## Restructuring Project
+
+**User:** loks like I made a mistake, everything should have been in the zwift_scout folder; I'm going to use this vibe_code root forlder for other prpjects too! could you move everything and refactor as needed, then test it is working
+
+**Claude:** Reorganized all files into the zwift_scout directory and verified everything works.
+
+### Actions Taken:
+
+1. **Moved files into zwift_scout/:**
+   ```bash
+   mv dbt_project zwift_scout/
+   mv streamlit_app.py zwift_scout/
+   mv data zwift_scout/
+   ```
+
+2. **Updated file paths:**
+   - All pipelines already used relative paths (`./data/raw.duckdb`) ✅
+   - dbt profiles.yml already used relative paths (`../data/analytics.duckdb`) ✅
+   - streamlit_app.py already used relative path (`data/analytics.duckdb`) ✅
+   - No refactoring needed - everything was already relative!
+
+3. **Tested dbt pipeline:**
+   ```bash
+   cd zwift_scout/dbt_project && poetry run dbt run --profiles-dir .
+   ```
+   - Result: ✅ All 3 models passed (staging, intermediate, core)
+
+4. **Tested streamlit app:**
+   ```bash
+   poetry run streamlit run zwift_scout/streamlit_app.py
+   ```
+   - Result: ✅ Running at http://localhost:8501
+   - Data verified: 38 riders in core table
+
+### Final Structure:
+```
+vibe_code/
+├── .env
+├── .env.sops
+├── pyproject.toml
+├── poetry.lock
+├── CLAUDE.md
+├── session_log.md
+└── zwift_scout/
+    ├── data/
+    │   ├── raw.duckdb (2.1MB)
+    │   └── analytics.duckdb (524KB)
+    ├── dbt_project/
+    │   ├── dbt_project.yml
+    │   ├── profiles.yml
+    │   └── models/
+    │       ├── staging/
+    │       ├── intermediate/
+    │       └── core/
+    ├── streamlit_app.py
+    ├── zr_riders_pipeline.py
+    └── zr_club_pipeline.py
+```
+
+### Commands to Run from Root:
+
+**DLT Pipelines:**
+```bash
+poetry run python zwift_scout/zr_riders_pipeline.py
+poetry run python zwift_scout/zr_club_pipeline.py
+```
+
+**dbt:**
+```bash
+cd zwift_scout/dbt_project && poetry run dbt run --profiles-dir .
+```
+
+**Streamlit:**
+```bash
+poetry run streamlit run zwift_scout/streamlit_app.py
+```
+
+**Verification:**
+- ✅ Databases accessible with correct data (38 riders)
+- ✅ All paths working correctly
+- ✅ Streamlit running with filters
+- ✅ Project now isolated in zwift_scout/ folder
+
+---
+
+## Final Project Isolation
+
+**User:** yes, but zwift_scout is the project root, it's where we should be working from; vibe_code is just a folder collecting all vibe coding projects and each will be a separate poetry project
+
+**Claude:** Completed full project isolation - zwift_scout is now a standalone Poetry project.
+
+### Actions Taken:
+
+1. **Moved Poetry configuration:**
+   ```bash
+   mv pyproject.toml poetry.lock zwift_scout/
+   ```
+
+2. **Moved project documentation:**
+   ```bash
+   mv CLAUDE.md zwift_scout/
+   ```
+
+3. **Cleaned up root:**
+   ```bash
+   rm requirements.txt  # Replaced by Poetry
+   ```
+
+4. **Installed dependencies:**
+   ```bash
+   cd zwift_scout && poetry install
+   ```
+   - Created new virtualenv: `zwift-scout-AmSmDDAF-py3.12`
+   - Installed 98 packages
+
+5. **Tested everything:**
+   - ✅ Poetry install: Working
+   - ✅ dbt pipeline: All 3 models passed
+   - ✅ Streamlit app: Running at http://localhost:8501
+
+### Final Structure:
+
+**vibe_code/ (root for all projects)**
+```
+vibe_code/
+├── .env
+├── .env.sops
+├── .envrc
+├── .git/
+├── .gitignore
+├── .sops.yaml
+├── decrypt-secrets.sh
+├── session_log.md
+├── sops_setup_doc.md
+└── zwift_scout/          ← Independent project
+```
+
+**zwift_scout/ (project root)**
+```
+zwift_scout/
+├── CLAUDE.md             ← Project instructions
+├── pyproject.toml        ← Poetry config
+├── poetry.lock           ← Lock file
+├── data/
+│   ├── raw.duckdb
+│   └── analytics.duckdb
+├── dbt_project/
+│   ├── dbt_project.yml
+│   ├── profiles.yml
+│   └── models/
+├── streamlit_app.py
+├── zr_riders_pipeline.py
+└── zr_club_pipeline.py
+```
+
+### Working from zwift_scout/:
+
+**All commands now run from project root:**
+
+```bash
+cd zwift_scout
+
+# Install dependencies
+poetry install
+
+# Run pipelines
+poetry run python zr_riders_pipeline.py
+poetry run python zr_club_pipeline.py
+
+# Run dbt
+cd dbt_project && poetry run dbt run --profiles-dir .
+
+# Run Streamlit
+poetry run streamlit run streamlit_app.py
+```
+
+### Benefits:
+- ✅ Each project in vibe_code/ is independent
+- ✅ Separate virtual environments per project
+- ✅ No shared dependencies
+- ✅ Easy to add new projects to vibe_code/
+- ✅ zwift_scout can be moved/shared independently
+
+---
+
