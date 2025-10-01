@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "zwift-scout"
+version = "0.1.0"
+description = ""
+authors = ["robgriffin247 <robgriffin247@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.15"
+dlt = {extras = ["duckdb"], version = "^1.17.0"}
+httpx = "^0.28.1"
+dbt-duckdb = "^1.9.6"
+streamlit = "^1.50.0"
+pandas = "^2.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

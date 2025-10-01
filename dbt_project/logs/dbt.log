@@ -1,0 +1,1878 @@
+[0m11:06:52.304112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76961d4883b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76961de88a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76961d48dd00>]}
+
+
+============================== 11:06:52.357166 | 037a2450-217f-4cc3-a44f-51f848831568 ==============================
+[0m11:06:52.357166 [info ] [MainThread]: Running with dbt=1.10.13
+[0m11:06:52.357921 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'use_colors': 'True', 'log_path': '/home/robgriffin247/vibe_code/dbt_project/logs', 'profiles_dir': '.', 'target_path': 'None', 'version_check': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'warn_error': 'None', 'static_parser': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'empty': 'None', 'invocation_command': 'dbt debug --profiles-dir .', 'cache_selected_only': 'False'}
+[0m11:06:52.435255 [info ] [MainThread]: dbt version: 1.10.13
+[0m11:06:52.436111 [info ] [MainThread]: python version: 3.12.3
+[0m11:06:52.436540 [info ] [MainThread]: python path: /home/robgriffin247/.cache/pypoetry/virtualenvs/zwift-scout-iR7vnVXX-py3.12/bin/python
+[0m11:06:52.437314 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m11:06:52.643311 [info ] [MainThread]: Using profiles dir at .
+[0m11:06:52.645755 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m11:06:52.647463 [info ] [MainThread]: Using dbt_project.yml file at /home/robgriffin247/vibe_code/dbt_project/dbt_project.yml
+[0m11:06:52.651840 [info ] [MainThread]: adapter type: duckdb
+[0m11:06:52.652379 [info ] [MainThread]: adapter version: 1.9.6
+[0m11:06:52.849617 [info ] [MainThread]: Configuration:
+[0m11:06:52.850147 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:06:52.850531 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:06:52.850865 [info ] [MainThread]: Required dependencies:
+[0m11:06:52.851239 [debug] [MainThread]: Executing "git --help"
+[0m11:06:52.854953 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:06:52.855505 [debug] [MainThread]: STDERR: "b''"
+[0m11:06:52.855964 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:06:52.856397 [info ] [MainThread]: Connection:
+[0m11:06:52.856914 [info ] [MainThread]:   database: analytics
+[0m11:06:52.857341 [info ] [MainThread]:   schema: main
+[0m11:06:52.857689 [info ] [MainThread]:   path: ../data/analytics.duckdb
+[0m11:06:52.858002 [info ] [MainThread]:   config_options: None
+[0m11:06:52.858314 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
+[0m11:06:52.858598 [info ] [MainThread]:   settings: {}
+[0m11:06:52.859029 [info ] [MainThread]:   external_root: .
+[0m11:06:52.859328 [info ] [MainThread]:   use_credential_provider: None
+[0m11:06:52.860860 [info ] [MainThread]:   attach: None
+[0m11:06:52.861475 [info ] [MainThread]:   filesystems: None
+[0m11:06:52.861801 [info ] [MainThread]:   remote: None
+[0m11:06:52.862177 [info ] [MainThread]:   plugins: None
+[0m11:06:52.862520 [info ] [MainThread]:   disable_transactions: False
+[0m11:06:52.863120 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m11:06:52.957371 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m11:06:53.013651 [debug] [MainThread]: Using duckdb connection "debug"
+[0m11:06:53.014261 [debug] [MainThread]: On debug: select 1 as id
+[0m11:06:53.014680 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:06:58.282395 [debug] [MainThread]: SQL status: OK in 5.268 seconds
+[0m11:06:58.283764 [debug] [MainThread]: On debug: Close
+[0m11:06:58.286369 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:06:58.287311 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:06:58.290504 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 6.109326, "process_in_blocks": "50432", "process_kernel_time": 1.428783, "process_mem_max_rss": "210472", "process_out_blocks": "71880", "process_user_time": 5.622303}
+[0m11:06:58.291143 [debug] [MainThread]: Command `dbt debug` succeeded at 11:06:58.290995 after 6.11 seconds
+[0m11:06:58.291499 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:06:58.291913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76961cb083e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76961d486360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76961d1856a0>]}
+[0m11:06:58.292818 [debug] [MainThread]: Flushing usage events
+[0m11:07:03.617398 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:23:00.672246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de6464503e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de6457db620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de6457d85c0>]}
+
+
+============================== 11:23:00.681812 | 69a920b0-e05a-4892-92ec-a50b55da7817 ==============================
+[0m11:23:00.681812 [info ] [MainThread]: Running with dbt=1.10.13
+[0m11:23:00.682644 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'no_print': 'None', 'quiet': 'False', 'partial_parse': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error': 'None', 'use_experimental_parser': 'False', 'printer_width': '80', 'use_colors': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'empty': 'False', 'write_json': 'True', 'log_path': '/home/robgriffin247/vibe_code/dbt_project/logs', 'version_check': 'True'}
+[0m11:23:01.163659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de647c53950>]}
+[0m11:23:01.283461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de645c84860>]}
+[0m11:23:01.289730 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m11:23:01.378261 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m11:23:01.379169 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:23:01.379876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de63b8d1c40>]}
+[0m11:23:02.481310 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de639c6d520>]}
+[0m11:23:02.557287 [debug] [MainThread]: Wrote artifact WritableManifest to /home/robgriffin247/vibe_code/dbt_project/target/manifest.json
+[0m11:23:02.564116 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/robgriffin247/vibe_code/dbt_project/target/semantic_manifest.json
+[0m11:23:02.631583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de639cae630>]}
+[0m11:23:02.632370 [info ] [MainThread]: Found 3 models, 444 macros
+[0m11:23:02.633104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de639cb0cb0>]}
+[0m11:23:02.636451 [info ] [MainThread]: 
+[0m11:23:02.637281 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:23:02.637725 [info ] [MainThread]: 
+[0m11:23:02.638475 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:23:02.645485 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m11:23:02.657920 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m11:23:02.665147 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m11:23:02.723416 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m11:23:02.724063 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m11:23:02.724801 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m11:23:02.725298 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m11:23:02.725849 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m11:23:02.726316 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m11:23:02.726779 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:23:02.727272 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:23:02.727686 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:23:02.855779 [debug] [ThreadPool]: SQL status: OK in 0.128 seconds
+[0m11:23:02.856648 [debug] [ThreadPool]: SQL status: OK in 0.129 seconds
+[0m11:23:02.857476 [debug] [ThreadPool]: SQL status: OK in 0.131 seconds
+[0m11:23:02.859632 [debug] [ThreadPool]: On list_analytics: Close
+[0m11:23:02.861894 [debug] [ThreadPool]: On list_analytics: Close
+[0m11:23:02.864665 [debug] [ThreadPool]: On list_analytics: Close
+[0m11:23:02.867768 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_core)
+[0m11:23:02.868804 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_core"
+"
+[0m11:23:02.875340 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_staging)
+[0m11:23:02.881974 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_intermediate)
+[0m11:23:02.886209 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:23:02.887129 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_staging"
+"
+[0m11:23:02.887899 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_intermediate"
+"
+[0m11:23:02.888741 [debug] [ThreadPool]: On create_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_core"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m11:23:02.891343 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:23:02.893856 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:23:02.894935 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:23:02.897283 [debug] [ThreadPool]: On create_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_staging"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m11:23:02.898626 [debug] [ThreadPool]: On create_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_intermediate"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m11:23:02.900683 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:23:02.901928 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:23:02.905335 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m11:23:02.907701 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:23:02.911040 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:23:02.913415 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m11:23:02.915001 [debug] [ThreadPool]: On create_analytics_main_core: BEGIN
+[0m11:23:02.918344 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:23:02.921559 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:23:02.923532 [debug] [ThreadPool]: On create_analytics_main_staging: BEGIN
+[0m11:23:02.924592 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:23:02.925420 [debug] [ThreadPool]: On create_analytics_main_intermediate: BEGIN
+[0m11:23:02.926803 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:23:02.928036 [debug] [ThreadPool]: On create_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_core"} */
+
+    
+    
+        create schema if not exists "analytics"."main_core"
+    
+[0m11:23:02.929863 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:23:02.931097 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:23:02.931844 [debug] [ThreadPool]: On create_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_staging"} */
+
+    
+    
+        create schema if not exists "analytics"."main_staging"
+    
+[0m11:23:02.932796 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:23:02.935487 [debug] [ThreadPool]: On create_analytics_main_core: COMMIT
+[0m11:23:02.937303 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m11:23:02.938290 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:23:02.939036 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m11:23:02.939942 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:23:02.940938 [debug] [ThreadPool]: On create_analytics_main_core: COMMIT
+[0m11:23:02.943332 [debug] [ThreadPool]: On create_analytics_main_staging: COMMIT
+[0m11:23:02.944590 [debug] [ThreadPool]: On create_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_intermediate"} */
+
+    
+    
+        create schema if not exists "analytics"."main_intermediate"
+    
+[0m11:23:02.946321 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:23:02.948922 [debug] [ThreadPool]: On create_analytics_main_staging: COMMIT
+[0m11:23:02.955790 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m11:23:02.956859 [debug] [ThreadPool]: On create_analytics_main_core: Close
+[0m11:23:02.957844 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m11:23:02.961420 [debug] [ThreadPool]: On create_analytics_main_intermediate: COMMIT
+[0m11:23:02.963080 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:23:02.964115 [debug] [ThreadPool]: On create_analytics_main_intermediate: COMMIT
+[0m11:23:02.965583 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m11:23:02.966605 [debug] [ThreadPool]: On create_analytics_main_staging: Close
+[0m11:23:02.972400 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:23:02.973258 [debug] [ThreadPool]: On create_analytics_main_intermediate: Close
+[0m11:23:02.976814 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_intermediate, now list_analytics_main_core)
+[0m11:23:02.978211 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_staging, now list_analytics_main_staging)
+[0m11:23:02.985747 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_core, now list_analytics_main_intermediate)
+[0m11:23:02.997686 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_core"
+[0m11:23:02.999955 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_staging"
+[0m11:23:03.003836 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_intermediate"
+[0m11:23:03.005082 [debug] [ThreadPool]: On list_analytics_main_core: BEGIN
+[0m11:23:03.006281 [debug] [ThreadPool]: On list_analytics_main_staging: BEGIN
+[0m11:23:03.007294 [debug] [ThreadPool]: On list_analytics_main_intermediate: BEGIN
+[0m11:23:03.007875 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:23:03.008606 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:23:03.009683 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:23:03.013010 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:23:03.014419 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m11:23:03.015590 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_staging"
+[0m11:23:03.016703 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:23:03.017573 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_core"
+[0m11:23:03.018440 [debug] [ThreadPool]: On list_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_staging"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_staging'
+    and lower(table_catalog) = 'analytics'
+  
+[0m11:23:03.019541 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_intermediate"
+[0m11:23:03.020746 [debug] [ThreadPool]: On list_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_core"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_core'
+    and lower(table_catalog) = 'analytics'
+  
+[0m11:23:03.022728 [debug] [ThreadPool]: On list_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_intermediate"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_intermediate'
+    and lower(table_catalog) = 'analytics'
+  
+[0m11:23:03.044734 [debug] [ThreadPool]: SQL status: OK in 0.021 seconds
+[0m11:23:03.047326 [debug] [ThreadPool]: SQL status: OK in 0.023 seconds
+[0m11:23:03.048690 [debug] [ThreadPool]: SQL status: OK in 0.027 seconds
+[0m11:23:03.051496 [debug] [ThreadPool]: On list_analytics_main_core: ROLLBACK
+[0m11:23:03.053609 [debug] [ThreadPool]: On list_analytics_main_intermediate: ROLLBACK
+[0m11:23:03.056429 [debug] [ThreadPool]: On list_analytics_main_staging: ROLLBACK
+[0m11:23:03.060526 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_intermediate'
+[0m11:23:03.062865 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_core'
+[0m11:23:03.064593 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_staging'
+[0m11:23:03.065223 [debug] [ThreadPool]: On list_analytics_main_intermediate: Close
+[0m11:23:03.065752 [debug] [ThreadPool]: On list_analytics_main_core: Close
+[0m11:23:03.066375 [debug] [ThreadPool]: On list_analytics_main_staging: Close
+[0m11:23:03.070178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de647d1e450>]}
+[0m11:23:03.071467 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:23:03.072243 [debug] [MainThread]: On master: BEGIN
+[0m11:23:03.073179 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:23:03.075719 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m11:23:03.076388 [debug] [MainThread]: On master: COMMIT
+[0m11:23:03.076909 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:23:03.077218 [debug] [MainThread]: On master: COMMIT
+[0m11:23:03.078263 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:23:03.079097 [debug] [MainThread]: On master: Close
+[0m11:23:03.088695 [debug] [Thread-1 (]: Began running node model.zwift_scout.stg_riders
+[0m11:23:03.089573 [info ] [Thread-1 (]: 1 of 3 START sql view model main_staging.stg_riders ............................ [RUN]
+[0m11:23:03.090341 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_analytics_main_staging, now model.zwift_scout.stg_riders)
+[0m11:23:03.090791 [debug] [Thread-1 (]: Began compiling node model.zwift_scout.stg_riders
+[0m11:23:03.103373 [debug] [Thread-1 (]: Writing injected SQL for node "model.zwift_scout.stg_riders"
+[0m11:23:03.107339 [debug] [Thread-1 (]: Began executing node model.zwift_scout.stg_riders
+[0m11:23:03.151421 [debug] [Thread-1 (]: Writing runtime sql for node "model.zwift_scout.stg_riders"
+[0m11:23:03.153619 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m11:23:03.154175 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: BEGIN
+[0m11:23:03.154598 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:23:03.156959 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:23:03.157532 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m11:23:03.158109 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+
+  
+  create view "analytics"."main_staging"."stg_riders__dbt_tmp" as (
+    
+
+with source as (
+    select * from '../data/raw.duckdb'.zr_raw.riders
+),
+
+renamed as (
+    select
+        -- Identity
+        rider_id,
+        name,
+        gender,
+        country,
+        age,
+        height,
+        coalesce(weight, weight__v_double)::float as weight,
+
+        -- Category & FTP
+        zp_category,
+        zp_ftp,
+
+        -- Power watts/kg - renamed from power__wkg[duration]
+        power__wkg5::float as watts_kg_5s,
+        power__wkg15::float as watts_kg_15s,
+        power__wkg30::float as watts_kg_30s,
+        power__wkg60::float as watts_kg_60s,
+        power__wkg120::float as watts_kg_120s,
+        power__wkg300::float as watts_kg_300s,
+        power__wkg1200::float as watts_kg_1200s,
+
+        -- Power watts - renamed from power__w[duration]
+        power__w5::float as watts_5s,
+        power__w15::float as watts_15s,
+        power__w30::float as watts_30s,
+        power__w60::float as watts_60s,
+        power__w120::float as watts_120s,
+        power__w300::float as watts_300s,
+        power__w1200::float as watts_1200s,
+
+        -- Power analysis
+        power__cp::float as critical_power,
+        power__awc::float as anaerobic_work_capacity,
+        power__compound_score::float as compound_score,
+        power__power_rating::float as power_rating,
+
+        -- Race data - last
+        race__last__rating::float as last_rating,
+        race__last__date::bigint as last_date,
+        race__last__mixed__category as last_mixed_category,
+        race__last__mixed__number::int as last_mixed_number,
+
+        -- Race data - current
+        race__current__rating::float as current_rating,
+        race__current__date::bigint as current_date,
+        race__current__mixed__category as current_mixed_category,
+        race__current__mixed__number::int as current_mixed_number,
+
+        -- Race data - max30
+        race__max30__rating::float as max30_rating,
+        race__max30__date::bigint as max30_date,
+        race__max30__expires::bigint as max30_expires,
+        race__max30__mixed__category as max30_mixed_category,
+        race__max30__mixed__number::int as max30_mixed_number,
+
+        -- Race data - max90
+        race__max90__rating::float as max90_rating,
+        race__max90__date::bigint as max90_date,
+        race__max90__expires::bigint as max90_expires,
+        race__max90__mixed__category as max90_mixed_category,
+        race__max90__mixed__number::int as max90_mixed_number,
+
+        -- Race statistics
+        race__finishes::int as finishes,
+        race__dnfs::int as dnfs,
+        race__wins::int as wins,
+        race__podiums::int as podiums,
+
+        -- Handicaps
+        handicaps__profile__flat::float as handicap_flat,
+        handicaps__profile__rolling::float as handicap_rolling,
+        handicaps__profile__hilly::float as handicap_hilly,
+        handicaps__profile__mountainous::float as handicap_mountainous,
+
+        -- Phenotype scores
+        phenotype__scores__sprinter::float as sprinter_score,
+        phenotype__scores__puncheur::float as puncheur_score,
+        phenotype__scores__pursuiter::float as pursuiter_score,
+        phenotype__scores__climber::float as climber_score,
+        phenotype__scores__tt::float as tt_score,
+        phenotype__value as phenotype,
+        phenotype__bias::float as phenotype_bias,
+
+        -- Club
+        club__id::int as club_id,
+        club__name as club_name,
+
+        -- DLT metadata
+        _dlt_load_id,
+        _dlt_id
+
+    from source
+)
+
+select * from renamed
+  );
+
+[0m11:23:03.174377 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+
+  
+  create view "analytics"."main_staging"."stg_riders__dbt_tmp" as (
+    
+
+with source as (
+    select * from '../data/raw.duckdb'.zr_raw.riders
+),
+
+renamed as (
+    select
+        -- Identity
+        rider_id,
+        name,
+        gender,
+        country,
+        age,
+        height,
+        coalesce(weight, weight__v_double)::float as weight,
+
+        -- Category & FTP
+        zp_category,
+        zp_ftp,
+
+        -- Power watts/kg - renamed from power__wkg[duration]
+        power__wkg5::float as watts_kg_5s,
+        power__wkg15::float as watts_kg_15s,
+        power__wkg30::float as watts_kg_30s,
+        power__wkg60::float as watts_kg_60s,
+        power__wkg120::float as watts_kg_120s,
+        power__wkg300::float as watts_kg_300s,
+        power__wkg1200::float as watts_kg_1200s,
+
+        -- Power watts - renamed from power__w[duration]
+        power__w5::float as watts_5s,
+        power__w15::float as watts_15s,
+        power__w30::float as watts_30s,
+        power__w60::float as watts_60s,
+        power__w120::float as watts_120s,
+        power__w300::float as watts_300s,
+        power__w1200::float as watts_1200s,
+
+        -- Power analysis
+        power__cp::float as critical_power,
+        power__awc::float as anaerobic_work_capacity,
+        power__compound_score::float as compound_score,
+        power__power_rating::float as power_rating,
+
+        -- Race data - last
+        race__last__rating::float as last_rating,
+        race__last__date::bigint as last_date,
+        race__last__mixed__category as last_mixed_category,
+        race__last__mixed__number::int as last_mixed_number,
+
+        -- Race data - current
+        race__current__rating::float as current_rating,
+        race__current__date::bigint as current_date,
+        race__current__mixed__category as current_mixed_category,
+        race__current__mixed__number::int as current_mixed_number,
+
+        -- Race data - max30
+        race__max30__rating::float as max30_rating,
+        race__max30__date::bigint as max30_date,
+        race__max30__expires::bigint as max30_expires,
+        race__max30__mixed__category as max30_mixed_category,
+        race__max30__mixed__number::int as max30_mixed_number,
+
+        -- Race data - max90
+        race__max90__rating::float as max90_rating,
+        race__max90__date::bigint as max90_date,
+        race__max90__expires::bigint as max90_expires,
+        race__max90__mixed__category as max90_mixed_category,
+        race__max90__mixed__number::int as max90_mixed_number,
+
+        -- Race statistics
+        race__finishes::int as finishes,
+        race__dnfs::int as dnfs,
+        race__wins::int as wins,
+        race__podiums::int as podiums,
+
+        -- Handicaps
+        handicaps__profile__flat::float as handicap_flat,
+        handicaps__profile__rolling::float as handicap_rolling,
+        handicaps__profile__hilly::float as handicap_hilly,
+        handicaps__profile__mountainous::float as handicap_mountainous,
+
+        -- Phenotype scores
+        phenotype__scores__sprinter::float as sprinter_score,
+        phenotype__scores__puncheur::float as puncheur_score,
+        phenotype__scores__pursuiter::float as pursuiter_score,
+        phenotype__scores__climber::float as climber_score,
+        phenotype__scores__tt::float as tt_score,
+        phenotype__value as phenotype,
+        phenotype__bias::float as phenotype_bias,
+
+        -- Club
+        club__id::int as club_id,
+        club__name as club_name,
+
+        -- DLT metadata
+        _dlt_load_id,
+        _dlt_id
+
+    from source
+)
+
+select * from renamed
+  );
+
+[0m11:23:03.175289 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m11:23:03.176192 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: ROLLBACK
+[0m11:23:03.199530 [debug] [Thread-1 (]: Failed to rollback 'model.zwift_scout.stg_riders'
+[0m11:23:03.200179 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: Close
+[0m11:23:03.203934 [debug] [Thread-1 (]: Runtime Error in model stg_riders (models/staging/stg_riders.sql)
+  Parser Error: syntax error at or near "."
+  
+  LINE 8:     select * from '../data/raw.duckdb'.zr_raw.riders
+                                                ^
+[0m11:23:03.207854 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '69a920b0-e05a-4892-92ec-a50b55da7817', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de62a73f4a0>]}
+[0m11:23:03.209070 [error] [Thread-1 (]: 1 of 3 ERROR creating sql view model main_staging.stg_riders ................... [[31mERROR[0m in 0.11s]
+[0m11:23:03.214076 [debug] [Thread-1 (]: Finished running node model.zwift_scout.stg_riders
+[0m11:23:03.217629 [debug] [Thread-7 (]: Marking all children of 'model.zwift_scout.stg_riders' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_riders (models/staging/stg_riders.sql)
+  Parser Error: syntax error at or near "."
+  
+  LINE 8:     select * from '../data/raw.duckdb'.zr_raw.riders
+                                                ^.
+[0m11:23:03.221105 [debug] [Thread-3 (]: Began running node model.zwift_scout.int_riders
+[0m11:23:03.222291 [info ] [Thread-3 (]: 2 of 3 SKIP relation main_intermediate.int_riders .............................. [[33mSKIP[0m]
+[0m11:23:03.223958 [debug] [Thread-3 (]: Finished running node model.zwift_scout.int_riders
+[0m11:23:03.225923 [debug] [Thread-2 (]: Began running node model.zwift_scout.riders
+[0m11:23:03.226519 [info ] [Thread-2 (]: 3 of 3 SKIP relation main_core.riders .......................................... [[33mSKIP[0m]
+[0m11:23:03.227218 [debug] [Thread-2 (]: Finished running node model.zwift_scout.riders
+[0m11:23:03.235437 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:23:03.236354 [debug] [MainThread]: On master: BEGIN
+[0m11:23:03.236941 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:23:03.238782 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m11:23:03.239401 [debug] [MainThread]: On master: COMMIT
+[0m11:23:03.239852 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:23:03.240266 [debug] [MainThread]: On master: COMMIT
+[0m11:23:03.242664 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:23:03.243455 [debug] [MainThread]: On master: Close
+[0m11:23:03.244242 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:23:03.244853 [debug] [MainThread]: Connection 'model.zwift_scout.stg_riders' was properly closed.
+[0m11:23:03.245648 [debug] [MainThread]: Connection 'list_analytics_main_intermediate' was properly closed.
+[0m11:23:03.247789 [debug] [MainThread]: Connection 'list_analytics_main_core' was properly closed.
+[0m11:23:03.248807 [info ] [MainThread]: 
+[0m11:23:03.249391 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 0.61 seconds (0.61s).
+[0m11:23:03.250430 [debug] [MainThread]: Command end result
+[0m11:23:03.281250 [debug] [MainThread]: Wrote artifact WritableManifest to /home/robgriffin247/vibe_code/dbt_project/target/manifest.json
+[0m11:23:03.287160 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/robgriffin247/vibe_code/dbt_project/target/semantic_manifest.json
+[0m11:23:03.295599 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/robgriffin247/vibe_code/dbt_project/target/run_results.json
+[0m11:23:03.296285 [info ] [MainThread]: 
+[0m11:23:03.297061 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:23:03.297821 [info ] [MainThread]: 
+[0m11:23:03.298785 [error] [MainThread]: [31mFailure in model stg_riders (models/staging/stg_riders.sql)[0m
+[0m11:23:03.299292 [error] [MainThread]:   Runtime Error in model stg_riders (models/staging/stg_riders.sql)
+  Parser Error: syntax error at or near "."
+  
+  LINE 8:     select * from '../data/raw.duckdb'.zr_raw.riders
+                                                ^
+[0m11:23:03.299701 [info ] [MainThread]: 
+[0m11:23:03.300254 [info ] [MainThread]:   compiled code at target/compiled/zwift_scout/models/staging/stg_riders.sql
+[0m11:23:03.301094 [info ] [MainThread]: 
+[0m11:23:03.301761 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=2 NO-OP=0 TOTAL=3
+[0m11:23:03.305056 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.7709773, "process_in_blocks": "178896", "process_kernel_time": 1.380386, "process_mem_max_rss": "164284", "process_out_blocks": "3096", "process_user_time": 5.566738}
+[0m11:23:03.306661 [debug] [MainThread]: Command `dbt run` failed at 11:23:03.306472 after 2.77 seconds
+[0m11:23:03.307185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de6458305f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de645831640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de638252720>]}
+[0m11:23:03.307642 [debug] [MainThread]: Flushing usage events
+[0m11:23:03.756128 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:29:20.118333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e2965a7620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e2963401a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e2955dd730>]}
+
+
+============================== 11:29:20.124120 | 264b911f-3e03-4f47-ab89-27012140bc78 ==============================
+[0m11:29:20.124120 [info ] [MainThread]: Running with dbt=1.10.13
+[0m11:29:20.125234 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '.', 'write_json': 'True', 'quiet': 'False', 'partial_parse': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/robgriffin247/vibe_code/dbt_project/logs', 'empty': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --profiles-dir .', 'printer_width': '80', 'static_parser': 'True', 'debug': 'False', 'use_colors': 'True'}
+[0m11:29:20.614830 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e2961bfce0>]}
+[0m11:29:20.829040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e29650d310>]}
+[0m11:29:20.831951 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m11:29:20.958435 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m11:29:21.070619 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m11:29:21.071291 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e295c54110>]}
+[0m11:29:22.672656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e289d30b60>]}
+[0m11:29:22.754251 [debug] [MainThread]: Wrote artifact WritableManifest to /home/robgriffin247/vibe_code/dbt_project/target/manifest.json
+[0m11:29:22.756298 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/robgriffin247/vibe_code/dbt_project/target/semantic_manifest.json
+[0m11:29:22.781219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e2953e6ea0>]}
+[0m11:29:22.781874 [info ] [MainThread]: Found 3 models, 444 macros
+[0m11:29:22.782502 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e28b9bf6e0>]}
+[0m11:29:22.784855 [info ] [MainThread]: 
+[0m11:29:22.785390 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:29:22.785777 [info ] [MainThread]: 
+[0m11:29:22.786383 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:29:22.793751 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m11:29:22.802481 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m11:29:22.809663 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m11:29:22.868659 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m11:29:22.869461 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m11:29:22.870278 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m11:29:22.871212 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m11:29:22.872900 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m11:29:22.875458 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:29:22.877371 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m11:29:22.878175 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:29:22.879328 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:29:22.965906 [debug] [ThreadPool]: SQL status: OK in 0.086 seconds
+[0m11:29:22.966788 [debug] [ThreadPool]: SQL status: OK in 0.089 seconds
+[0m11:29:22.967395 [debug] [ThreadPool]: SQL status: OK in 0.092 seconds
+[0m11:29:22.969476 [debug] [ThreadPool]: On list_analytics: Close
+[0m11:29:22.974247 [debug] [ThreadPool]: On list_analytics: Close
+[0m11:29:22.977167 [debug] [ThreadPool]: On list_analytics: Close
+[0m11:29:22.979822 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_intermediate)
+[0m11:29:22.980655 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_intermediate"
+"
+[0m11:29:22.981373 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_core)
+[0m11:29:22.982193 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_staging)
+[0m11:29:22.992794 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:29:22.994993 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_core"
+"
+[0m11:29:22.995968 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_staging"
+"
+[0m11:29:22.996635 [debug] [ThreadPool]: On create_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_intermediate"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m11:29:22.999203 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:29:23.001789 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:29:23.002656 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:29:23.004009 [debug] [ThreadPool]: On create_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_core"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m11:29:23.004953 [debug] [ThreadPool]: On create_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_staging"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m11:29:23.006856 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:29:23.009451 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:29:23.010899 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m11:29:23.016406 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:29:23.017466 [debug] [ThreadPool]: On create_analytics_main_intermediate: BEGIN
+[0m11:29:23.018756 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m11:29:23.020248 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m11:29:23.021713 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:29:23.024046 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:29:23.026495 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:29:23.027416 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:29:23.028320 [debug] [ThreadPool]: On create_analytics_main_staging: BEGIN
+[0m11:29:23.028984 [debug] [ThreadPool]: On create_analytics_main_core: BEGIN
+[0m11:29:23.029466 [debug] [ThreadPool]: On create_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_intermediate"} */
+
+    
+    
+        create schema if not exists "analytics"."main_intermediate"
+    
+[0m11:29:23.032832 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:29:23.033655 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:29:23.034224 [debug] [ThreadPool]: On create_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_staging"} */
+
+    
+    
+        create schema if not exists "analytics"."main_staging"
+    
+[0m11:29:23.035073 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:29:23.036741 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:29:23.038211 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m11:29:23.039140 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:29:23.040884 [debug] [ThreadPool]: On create_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_core"} */
+
+    
+    
+        create schema if not exists "analytics"."main_core"
+    
+[0m11:29:23.043644 [debug] [ThreadPool]: On create_analytics_main_intermediate: COMMIT
+[0m11:29:23.045873 [debug] [ThreadPool]: On create_analytics_main_staging: COMMIT
+[0m11:29:23.047936 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m11:29:23.049088 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:29:23.049968 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m11:29:23.050805 [debug] [ThreadPool]: On create_analytics_main_intermediate: COMMIT
+[0m11:29:23.052007 [debug] [ThreadPool]: On create_analytics_main_core: COMMIT
+[0m11:29:23.053062 [debug] [ThreadPool]: On create_analytics_main_staging: COMMIT
+[0m11:29:23.055048 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m11:29:23.056098 [debug] [ThreadPool]: On create_analytics_main_core: COMMIT
+[0m11:29:23.057957 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:29:23.059233 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m11:29:23.060000 [debug] [ThreadPool]: On create_analytics_main_staging: Close
+[0m11:29:23.060482 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m11:29:23.061100 [debug] [ThreadPool]: On create_analytics_main_intermediate: Close
+[0m11:29:23.061750 [debug] [ThreadPool]: On create_analytics_main_core: Close
+[0m11:29:23.066493 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_intermediate, now list_analytics_main_intermediate)
+[0m11:29:23.068065 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_core, now list_analytics_main_core)
+[0m11:29:23.075675 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_staging, now list_analytics_main_staging)
+[0m11:29:23.078916 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_intermediate"
+[0m11:29:23.081328 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_core"
+[0m11:29:23.085336 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_staging"
+[0m11:29:23.086327 [debug] [ThreadPool]: On list_analytics_main_intermediate: BEGIN
+[0m11:29:23.086898 [debug] [ThreadPool]: On list_analytics_main_core: BEGIN
+[0m11:29:23.087416 [debug] [ThreadPool]: On list_analytics_main_staging: BEGIN
+[0m11:29:23.088022 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:29:23.088523 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:29:23.088966 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:29:23.090605 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:29:23.092775 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_intermediate"
+[0m11:29:23.094944 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m11:29:23.096221 [debug] [ThreadPool]: On list_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_intermediate"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_intermediate'
+    and lower(table_catalog) = 'analytics'
+  
+[0m11:29:23.097409 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m11:29:23.098557 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_core"
+[0m11:29:23.101162 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_staging"
+[0m11:29:23.103041 [debug] [ThreadPool]: On list_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_core"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_core'
+    and lower(table_catalog) = 'analytics'
+  
+[0m11:29:23.104987 [debug] [ThreadPool]: On list_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_staging"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_staging'
+    and lower(table_catalog) = 'analytics'
+  
+[0m11:29:23.117643 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m11:29:23.121335 [debug] [ThreadPool]: On list_analytics_main_intermediate: ROLLBACK
+[0m11:29:23.122756 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m11:29:23.124450 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m11:29:23.127758 [debug] [ThreadPool]: On list_analytics_main_core: ROLLBACK
+[0m11:29:23.130523 [debug] [ThreadPool]: On list_analytics_main_staging: ROLLBACK
+[0m11:29:23.133177 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_intermediate'
+[0m11:29:23.133808 [debug] [ThreadPool]: On list_analytics_main_intermediate: Close
+[0m11:29:23.136078 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_core'
+[0m11:29:23.137440 [debug] [ThreadPool]: On list_analytics_main_core: Close
+[0m11:29:23.141101 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_staging'
+[0m11:29:23.141827 [debug] [ThreadPool]: On list_analytics_main_staging: Close
+[0m11:29:23.145446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e289f4c590>]}
+[0m11:29:23.146243 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:29:23.146659 [debug] [MainThread]: On master: BEGIN
+[0m11:29:23.147014 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:29:23.148405 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:29:23.148984 [debug] [MainThread]: On master: COMMIT
+[0m11:29:23.149347 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:29:23.149676 [debug] [MainThread]: On master: COMMIT
+[0m11:29:23.150673 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:29:23.151055 [debug] [MainThread]: On master: Close
+[0m11:29:23.158259 [debug] [Thread-1 (]: Began running node model.zwift_scout.stg_riders
+[0m11:29:23.159339 [info ] [Thread-1 (]: 1 of 3 START sql view model main_staging.stg_riders ............................ [RUN]
+[0m11:29:23.160171 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_analytics_main_staging, now model.zwift_scout.stg_riders)
+[0m11:29:23.160927 [debug] [Thread-1 (]: Began compiling node model.zwift_scout.stg_riders
+[0m11:29:23.169781 [debug] [Thread-1 (]: Writing injected SQL for node "model.zwift_scout.stg_riders"
+[0m11:29:23.170633 [debug] [Thread-1 (]: Began executing node model.zwift_scout.stg_riders
+[0m11:29:23.215110 [debug] [Thread-1 (]: Writing runtime sql for node "model.zwift_scout.stg_riders"
+[0m11:29:23.216323 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m11:29:23.216848 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: BEGIN
+[0m11:29:23.217190 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:29:23.218413 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:29:23.218881 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m11:29:23.219351 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+
+  
+  create view "analytics"."main_staging"."stg_riders__dbt_tmp" as (
+    
+
+with source as (
+    select * from raw.zr_raw.riders
+),
+
+renamed as (
+    select
+        -- Identity
+        rider_id,
+        name,
+        gender,
+        country,
+        age,
+        height,
+        coalesce(weight, weight__v_double)::float as weight,
+
+        -- Category & FTP
+        zp_category,
+        zp_ftp,
+
+        -- Power watts/kg - renamed from power__wkg[duration]
+        power__wkg5::float as watts_kg_5s,
+        power__wkg15::float as watts_kg_15s,
+        power__wkg30::float as watts_kg_30s,
+        power__wkg60::float as watts_kg_60s,
+        power__wkg120::float as watts_kg_120s,
+        power__wkg300::float as watts_kg_300s,
+        power__wkg1200::float as watts_kg_1200s,
+
+        -- Power watts - renamed from power__w[duration]
+        power__w5::float as watts_5s,
+        power__w15::float as watts_15s,
+        power__w30::float as watts_30s,
+        power__w60::float as watts_60s,
+        power__w120::float as watts_120s,
+        power__w300::float as watts_300s,
+        power__w1200::float as watts_1200s,
+
+        -- Power analysis
+        power__cp::float as critical_power,
+        power__awc::float as anaerobic_work_capacity,
+        power__compound_score::float as compound_score,
+        power__power_rating::float as power_rating,
+
+        -- Race data - last
+        race__last__rating::float as last_rating,
+        race__last__date::bigint as last_date,
+        race__last__mixed__category as last_mixed_category,
+        race__last__mixed__number::int as last_mixed_number,
+
+        -- Race data - current
+        race__current__rating::float as current_rating,
+        race__current__date::bigint as current_date,
+        race__current__mixed__category as current_mixed_category,
+        race__current__mixed__number::int as current_mixed_number,
+
+        -- Race data - max30
+        race__max30__rating::float as max30_rating,
+        race__max30__date::bigint as max30_date,
+        race__max30__expires::bigint as max30_expires,
+        race__max30__mixed__category as max30_mixed_category,
+        race__max30__mixed__number::int as max30_mixed_number,
+
+        -- Race data - max90
+        race__max90__rating::float as max90_rating,
+        race__max90__date::bigint as max90_date,
+        race__max90__expires::bigint as max90_expires,
+        race__max90__mixed__category as max90_mixed_category,
+        race__max90__mixed__number::int as max90_mixed_number,
+
+        -- Race statistics
+        race__finishes::int as finishes,
+        race__dnfs::int as dnfs,
+        race__wins::int as wins,
+        race__podiums::int as podiums,
+
+        -- Handicaps
+        handicaps__profile__flat::float as handicap_flat,
+        handicaps__profile__rolling::float as handicap_rolling,
+        handicaps__profile__hilly::float as handicap_hilly,
+        handicaps__profile__mountainous::float as handicap_mountainous,
+
+        -- Phenotype scores
+        phenotype__scores__sprinter::float as sprinter_score,
+        phenotype__scores__puncheur::float as puncheur_score,
+        phenotype__scores__pursuiter::float as pursuiter_score,
+        phenotype__scores__climber::float as climber_score,
+        phenotype__scores__tt::float as tt_score,
+        phenotype__value as phenotype,
+        phenotype__bias::float as phenotype_bias,
+
+        -- Club
+        club__id::int as club_id,
+        club__name as club_name,
+
+        -- DLT metadata
+        _dlt_load_id,
+        _dlt_id
+
+    from source
+)
+
+select * from renamed
+  );
+
+[0m11:29:23.221923 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:29:23.233551 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m11:29:23.234481 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+alter view "analytics"."main_staging"."stg_riders__dbt_tmp" rename to "stg_riders"
+[0m11:29:23.236048 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:29:23.251382 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: COMMIT
+[0m11:29:23.252168 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m11:29:23.252686 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: COMMIT
+[0m11:29:23.264911 [debug] [Thread-1 (]: SQL status: OK in 0.012 seconds
+[0m11:29:23.273237 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m11:29:23.274331 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+
+      drop view if exists "analytics"."main_staging"."stg_riders__dbt_backup" cascade
+    
+[0m11:29:23.276630 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:29:23.280072 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: Close
+[0m11:29:23.282930 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e288143ef0>]}
+[0m11:29:23.283792 [info ] [Thread-1 (]: 1 of 3 OK created sql view model main_staging.stg_riders ....................... [[32mOK[0m in 0.12s]
+[0m11:29:23.284789 [debug] [Thread-1 (]: Finished running node model.zwift_scout.stg_riders
+[0m11:29:23.286191 [debug] [Thread-3 (]: Began running node model.zwift_scout.int_riders
+[0m11:29:23.287516 [info ] [Thread-3 (]: 2 of 3 START sql view model main_intermediate.int_riders ....................... [RUN]
+[0m11:29:23.288705 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_analytics_main_core, now model.zwift_scout.int_riders)
+[0m11:29:23.289214 [debug] [Thread-3 (]: Began compiling node model.zwift_scout.int_riders
+[0m11:29:23.295032 [debug] [Thread-3 (]: Writing injected SQL for node "model.zwift_scout.int_riders"
+[0m11:29:23.296854 [debug] [Thread-3 (]: Began executing node model.zwift_scout.int_riders
+[0m11:29:23.300741 [debug] [Thread-3 (]: Writing runtime sql for node "model.zwift_scout.int_riders"
+[0m11:29:23.302408 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m11:29:23.303011 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: BEGIN
+[0m11:29:23.303408 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m11:29:23.304757 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m11:29:23.305249 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m11:29:23.305669 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.int_riders"} */
+
+  
+  create view "analytics"."main_intermediate"."int_riders__dbt_tmp" as (
+    
+
+with staged as (
+    select * from "analytics"."main_staging"."stg_riders"
+),
+
+transformed as (
+    select
+        *,
+
+        -- Convert _dlt_load_id to human-readable timestamp
+        -- _dlt_load_id format is Unix timestamp with microseconds (e.g., 1759308455.704154)
+        to_timestamp(cast(split_part(_dlt_load_id, '.', 1) as bigint)) as loaded_at,
+
+        -- Calculate FTP per kg
+        case
+            when weight > 0 then round(zp_ftp / weight, 2)
+            else null
+        end as ftp_per_kg,
+
+        -- Convert race dates from Unix timestamp to timestamp
+        to_timestamp(last_date) as last_race_at,
+        to_timestamp(current_date) as current_race_at,
+        to_timestamp(max30_date) as max30_race_at,
+        to_timestamp(max30_expires) as max30_expires_at,
+        to_timestamp(max90_date) as max90_race_at,
+        to_timestamp(max90_expires) as max90_expires_at,
+
+        -- Calculate win rate
+        case
+            when finishes > 0 then round((wins::float / finishes) * 100, 2)
+            else 0
+        end as win_rate_pct,
+
+        -- Calculate podium rate
+        case
+            when finishes > 0 then round((podiums::float / finishes) * 100, 2)
+            else 0
+        end as podium_rate_pct,
+
+        -- Calculate DNF rate
+        case
+            when (finishes + dnfs) > 0 then round((dnfs::float / (finishes + dnfs)) * 100, 2)
+            else 0
+        end as dnf_rate_pct
+
+    from staged
+)
+
+select * from transformed
+  );
+
+[0m11:29:23.312340 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m11:29:23.315965 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m11:29:23.316736 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.int_riders"} */
+alter view "analytics"."main_intermediate"."int_riders__dbt_tmp" rename to "int_riders"
+[0m11:29:23.318185 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m11:29:23.319930 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: COMMIT
+[0m11:29:23.320411 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m11:29:23.320845 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: COMMIT
+[0m11:29:23.332203 [debug] [Thread-3 (]: SQL status: OK in 0.010 seconds
+[0m11:29:23.335746 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m11:29:23.336328 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.int_riders"} */
+
+      drop view if exists "analytics"."main_intermediate"."int_riders__dbt_backup" cascade
+    
+[0m11:29:23.337911 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m11:29:23.339558 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: Close
+[0m11:29:23.340600 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e2881a5130>]}
+[0m11:29:23.341633 [info ] [Thread-3 (]: 2 of 3 OK created sql view model main_intermediate.int_riders .................. [[32mOK[0m in 0.05s]
+[0m11:29:23.342509 [debug] [Thread-3 (]: Finished running node model.zwift_scout.int_riders
+[0m11:29:23.344712 [debug] [Thread-2 (]: Began running node model.zwift_scout.riders
+[0m11:29:23.345573 [info ] [Thread-2 (]: 3 of 3 START sql table model main_core.riders .................................. [RUN]
+[0m11:29:23.346309 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_analytics_main_intermediate, now model.zwift_scout.riders)
+[0m11:29:23.346773 [debug] [Thread-2 (]: Began compiling node model.zwift_scout.riders
+[0m11:29:23.353192 [debug] [Thread-2 (]: Writing injected SQL for node "model.zwift_scout.riders"
+[0m11:29:23.356018 [debug] [Thread-2 (]: Began executing node model.zwift_scout.riders
+[0m11:29:23.380018 [debug] [Thread-2 (]: Writing runtime sql for node "model.zwift_scout.riders"
+[0m11:29:23.381285 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m11:29:23.381801 [debug] [Thread-2 (]: On model.zwift_scout.riders: BEGIN
+[0m11:29:23.382134 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m11:29:23.383639 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m11:29:23.384158 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m11:29:23.384867 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main_core"."riders__dbt_tmp"
+  
+    as (
+      
+
+with intermediate as (
+    select * from "analytics"."main_intermediate"."int_riders"
+),
+
+final as (
+    select
+        -- Identity
+        rider_id,
+        name,
+        gender,
+        country,
+        age,
+        height,
+        weight,
+
+        -- Category & Performance
+        zp_category as category,
+        zp_ftp as ftp,
+        ftp_per_kg,
+
+        -- Key power metrics (most commonly used)
+        watts_kg_5s,
+        watts_kg_60s,
+        watts_kg_300s,
+        watts_5s,
+        watts_60s,
+        watts_300s,
+        critical_power,
+        power_rating,
+
+        -- Current racing status
+        current_rating,
+        current_race_at,
+        current_mixed_category,
+        current_mixed_number,
+
+        -- 30-day peak performance
+        max30_rating,
+        max30_race_at,
+        max30_expires_at,
+
+        -- Race statistics
+        finishes,
+        dnfs,
+        wins,
+        podiums,
+        win_rate_pct,
+        podium_rate_pct,
+        dnf_rate_pct,
+
+        -- Rider type
+        phenotype as rider_type,
+        phenotype_bias,
+        sprinter_score,
+        puncheur_score,
+        pursuiter_score,
+        climber_score,
+        tt_score,
+
+        -- Terrain strengths
+        handicap_flat,
+        handicap_rolling,
+        handicap_hilly,
+        handicap_mountainous,
+
+        -- Club
+        club_id,
+        club_name,
+
+        -- Metadata
+        loaded_at,
+        _dlt_id as record_id
+
+    from intermediate
+)
+
+select * from final
+    );
+  
+  
+[0m11:29:23.418448 [debug] [Thread-2 (]: SQL status: OK in 0.033 seconds
+[0m11:29:23.422087 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m11:29:23.422719 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+alter table "analytics"."main_core"."riders__dbt_tmp" rename to "riders"
+[0m11:29:23.426706 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m11:29:23.438305 [debug] [Thread-2 (]: On model.zwift_scout.riders: COMMIT
+[0m11:29:23.438865 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m11:29:23.439216 [debug] [Thread-2 (]: On model.zwift_scout.riders: COMMIT
+[0m11:29:23.450567 [debug] [Thread-2 (]: SQL status: OK in 0.011 seconds
+[0m11:29:23.455356 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m11:29:23.456423 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+
+      drop table if exists "analytics"."main_core"."riders__dbt_backup" cascade
+    
+[0m11:29:23.460977 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m11:29:23.464455 [debug] [Thread-2 (]: On model.zwift_scout.riders: Close
+[0m11:29:23.466491 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '264b911f-3e03-4f47-ab89-27012140bc78', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e28818cb90>]}
+[0m11:29:23.467293 [info ] [Thread-2 (]: 3 of 3 OK created sql table model main_core.riders ............................. [[32mOK[0m in 0.12s]
+[0m11:29:23.468351 [debug] [Thread-2 (]: Finished running node model.zwift_scout.riders
+[0m11:29:23.471712 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:29:23.472212 [debug] [MainThread]: On master: BEGIN
+[0m11:29:23.472682 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:29:23.475263 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m11:29:23.476193 [debug] [MainThread]: On master: COMMIT
+[0m11:29:23.477107 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:29:23.478281 [debug] [MainThread]: On master: COMMIT
+[0m11:29:23.481577 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m11:29:23.482995 [debug] [MainThread]: On master: Close
+[0m11:29:23.484435 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:29:23.485274 [debug] [MainThread]: Connection 'model.zwift_scout.stg_riders' was properly closed.
+[0m11:29:23.485677 [debug] [MainThread]: Connection 'model.zwift_scout.int_riders' was properly closed.
+[0m11:29:23.485941 [debug] [MainThread]: Connection 'model.zwift_scout.riders' was properly closed.
+[0m11:29:23.486342 [info ] [MainThread]: 
+[0m11:29:23.486898 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 0.70 seconds (0.70s).
+[0m11:29:23.488118 [debug] [MainThread]: Command end result
+[0m11:29:23.519601 [debug] [MainThread]: Wrote artifact WritableManifest to /home/robgriffin247/vibe_code/dbt_project/target/manifest.json
+[0m11:29:23.522028 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/robgriffin247/vibe_code/dbt_project/target/semantic_manifest.json
+[0m11:29:23.537731 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/robgriffin247/vibe_code/dbt_project/target/run_results.json
+[0m11:29:23.538249 [info ] [MainThread]: 
+[0m11:29:23.538731 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:29:23.539113 [info ] [MainThread]: 
+[0m11:29:23.539630 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m11:29:23.541507 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.5468037, "process_in_blocks": "6176", "process_kernel_time": 0.831641, "process_mem_max_rss": "168672", "process_out_blocks": "3008", "process_user_time": 7.051046}
+[0m11:29:23.542422 [debug] [MainThread]: Command `dbt run` succeeded at 11:29:23.542237 after 3.55 seconds
+[0m11:29:23.543031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e29650e9c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e297bc9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76e2882aae70>]}
+[0m11:29:23.543784 [debug] [MainThread]: Flushing usage events
+[0m11:29:24.147644 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:03:46.834433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fd749640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fd58a690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80faf43dd0>]}
+
+
+============================== 12:03:46.837703 | d8a7e9de-be4b-4e2b-b1f7-e7b53680e172 ==============================
+[0m12:03:46.837703 [info ] [MainThread]: Running with dbt=1.10.13
+[0m12:03:46.838154 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'introspect': 'True', 'cache_selected_only': 'False', 'use_colors': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'partial_parse': 'True', 'quiet': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'write_json': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'use_experimental_parser': 'False', 'target_path': 'None', 'log_cache_events': 'False', 'static_parser': 'True', 'profiles_dir': '.', 'version_check': 'True', 'printer_width': '80', 'log_path': '/home/robgriffin247/vibe_code/dbt_project/logs'}
+[0m12:03:47.041419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fb5605f0>]}
+[0m12:03:47.105328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fa9a35c0>]}
+[0m12:03:47.106809 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m12:03:47.161159 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m12:03:47.220234 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m12:03:47.220906 [debug] [MainThread]: Partial parsing: updated file: zwift_scout://models/staging/stg_riders.sql
+[0m12:03:47.445239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80f09af3b0>]}
+[0m12:03:47.479885 [debug] [MainThread]: Wrote artifact WritableManifest to /home/robgriffin247/vibe_code/dbt_project/target/manifest.json
+[0m12:03:47.481200 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/robgriffin247/vibe_code/dbt_project/target/semantic_manifest.json
+[0m12:03:47.492112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80f0980b90>]}
+[0m12:03:47.492545 [info ] [MainThread]: Found 3 models, 444 macros
+[0m12:03:47.492857 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80f0a22630>]}
+[0m12:03:47.494023 [info ] [MainThread]: 
+[0m12:03:47.494329 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:03:47.494533 [info ] [MainThread]: 
+[0m12:03:47.494894 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:03:47.498410 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m12:03:47.504867 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m12:03:47.510800 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m12:03:47.536278 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m12:03:47.536747 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m12:03:47.537038 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:03:47.537582 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m12:03:47.538643 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m12:03:47.539018 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:03:47.539418 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m12:03:47.539865 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m12:03:47.540135 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:03:47.592857 [debug] [ThreadPool]: SQL status: OK in 0.054 seconds
+[0m12:03:47.593996 [debug] [ThreadPool]: On list_analytics: Close
+[0m12:03:47.594758 [debug] [ThreadPool]: SQL status: OK in 0.058 seconds
+[0m12:03:47.596156 [debug] [ThreadPool]: On list_analytics: Close
+[0m12:03:47.596649 [debug] [ThreadPool]: SQL status: OK in 0.056 seconds
+[0m12:03:47.597786 [debug] [ThreadPool]: On list_analytics: Close
+[0m12:03:47.598751 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_staging)
+[0m12:03:47.599141 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_core)
+[0m12:03:47.599567 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_staging"
+"
+[0m12:03:47.599912 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main_intermediate)
+[0m12:03:47.600284 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_core"
+"
+[0m12:03:47.605946 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m12:03:47.606670 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main_intermediate"
+"
+[0m12:03:47.608234 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m12:03:47.608713 [debug] [ThreadPool]: On create_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_staging"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m12:03:47.610237 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m12:03:47.610831 [debug] [ThreadPool]: On create_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_core"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m12:03:47.611279 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:03:47.611613 [debug] [ThreadPool]: On create_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_intermediate"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m12:03:47.612150 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:03:47.612986 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:03:47.613982 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m12:03:47.615792 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m12:03:47.616377 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m12:03:47.616858 [debug] [ThreadPool]: On create_analytics_main_staging: BEGIN
+[0m12:03:47.617124 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m12:03:47.618134 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m12:03:47.619619 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m12:03:47.619982 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.620334 [debug] [ThreadPool]: On create_analytics_main_core: BEGIN
+[0m12:03:47.621041 [debug] [ThreadPool]: On create_analytics_main_intermediate: BEGIN
+[0m12:03:47.621487 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m12:03:47.622610 [debug] [ThreadPool]: On create_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_staging"} */
+
+    
+    
+        create schema if not exists "analytics"."main_staging"
+    
+[0m12:03:47.623040 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.623338 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m12:03:47.623745 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:03:47.624099 [debug] [ThreadPool]: On create_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_intermediate"} */
+
+    
+    
+        create schema if not exists "analytics"."main_intermediate"
+    
+[0m12:03:47.624385 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.624717 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m12:03:47.625701 [debug] [ThreadPool]: On create_analytics_main_staging: COMMIT
+[0m12:03:47.626025 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.626415 [debug] [ThreadPool]: On create_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "create_analytics_main_core"} */
+
+    
+    
+        create schema if not exists "analytics"."main_core"
+    
+[0m12:03:47.626752 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_staging"
+[0m12:03:47.627430 [debug] [ThreadPool]: On create_analytics_main_intermediate: COMMIT
+[0m12:03:47.628162 [debug] [ThreadPool]: On create_analytics_main_staging: COMMIT
+[0m12:03:47.628506 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.628793 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_intermediate"
+[0m12:03:47.629618 [debug] [ThreadPool]: On create_analytics_main_core: COMMIT
+[0m12:03:47.629989 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.630320 [debug] [ThreadPool]: On create_analytics_main_intermediate: COMMIT
+[0m12:03:47.630795 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main_core"
+[0m12:03:47.631257 [debug] [ThreadPool]: On create_analytics_main_staging: Close
+[0m12:03:47.631668 [debug] [ThreadPool]: On create_analytics_main_core: COMMIT
+[0m12:03:47.632097 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.632956 [debug] [ThreadPool]: On create_analytics_main_intermediate: Close
+[0m12:03:47.633297 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.633878 [debug] [ThreadPool]: On create_analytics_main_core: Close
+[0m12:03:47.635379 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_core, now list_analytics_main_staging)
+[0m12:03:47.635815 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_intermediate, now list_analytics_main_core)
+[0m12:03:47.636496 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main_staging, now list_analytics_main_intermediate)
+[0m12:03:47.641024 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_staging"
+[0m12:03:47.642639 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_core"
+[0m12:03:47.644015 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_intermediate"
+[0m12:03:47.644422 [debug] [ThreadPool]: On list_analytics_main_staging: BEGIN
+[0m12:03:47.644789 [debug] [ThreadPool]: On list_analytics_main_core: BEGIN
+[0m12:03:47.645083 [debug] [ThreadPool]: On list_analytics_main_intermediate: BEGIN
+[0m12:03:47.645364 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:03:47.645648 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:03:47.645930 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:03:47.647005 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:03:47.647571 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_core"
+[0m12:03:47.647890 [debug] [ThreadPool]: On list_analytics_main_core: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_core"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_core'
+    and lower(table_catalog) = 'analytics'
+  
+[0m12:03:47.648385 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m12:03:47.648844 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m12:03:47.649421 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_staging"
+[0m12:03:47.649773 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main_intermediate"
+[0m12:03:47.650109 [debug] [ThreadPool]: On list_analytics_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_staging"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_staging'
+    and lower(table_catalog) = 'analytics'
+  
+[0m12:03:47.650622 [debug] [ThreadPool]: On list_analytics_main_intermediate: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "connection_name": "list_analytics_main_intermediate"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_intermediate'
+    and lower(table_catalog) = 'analytics'
+  
+[0m12:03:47.659106 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m12:03:47.660774 [debug] [ThreadPool]: On list_analytics_main_core: ROLLBACK
+[0m12:03:47.661199 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m12:03:47.661884 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m12:03:47.663364 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_core'
+[0m12:03:47.664319 [debug] [ThreadPool]: On list_analytics_main_intermediate: ROLLBACK
+[0m12:03:47.665346 [debug] [ThreadPool]: On list_analytics_main_staging: ROLLBACK
+[0m12:03:47.665709 [debug] [ThreadPool]: On list_analytics_main_core: Close
+[0m12:03:47.666755 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_intermediate'
+[0m12:03:47.667773 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main_staging'
+[0m12:03:47.668361 [debug] [ThreadPool]: On list_analytics_main_intermediate: Close
+[0m12:03:47.669650 [debug] [ThreadPool]: On list_analytics_main_staging: Close
+[0m12:03:47.671883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80f0a95cd0>]}
+[0m12:03:47.672374 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:03:47.672696 [debug] [MainThread]: On master: BEGIN
+[0m12:03:47.672909 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:03:47.673718 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:03:47.674107 [debug] [MainThread]: On master: COMMIT
+[0m12:03:47.674367 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:03:47.674576 [debug] [MainThread]: On master: COMMIT
+[0m12:03:47.675140 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:03:47.675385 [debug] [MainThread]: On master: Close
+[0m12:03:47.677729 [debug] [Thread-1 (]: Began running node model.zwift_scout.stg_riders
+[0m12:03:47.678180 [info ] [Thread-1 (]: 1 of 3 START sql view model main_staging.stg_riders ............................ [RUN]
+[0m12:03:47.678563 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_analytics_main_staging, now model.zwift_scout.stg_riders)
+[0m12:03:47.678838 [debug] [Thread-1 (]: Began compiling node model.zwift_scout.stg_riders
+[0m12:03:47.684953 [debug] [Thread-1 (]: Writing injected SQL for node "model.zwift_scout.stg_riders"
+[0m12:03:47.685568 [debug] [Thread-1 (]: Began executing node model.zwift_scout.stg_riders
+[0m12:03:47.755323 [debug] [Thread-1 (]: Writing runtime sql for node "model.zwift_scout.stg_riders"
+[0m12:03:47.755964 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m12:03:47.756300 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: BEGIN
+[0m12:03:47.756578 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:03:47.757313 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.757600 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m12:03:47.757917 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+
+  
+  create view "analytics"."main_staging"."stg_riders__dbt_tmp" as (
+    
+
+with source as (
+    select * from raw.zr_raw.riders
+),
+
+-- Get most recent load for each rider
+most_recent as (
+    select
+        rider_id,
+        max(_dlt_load_id) as latest_load_id
+    from source
+    group by rider_id
+),
+
+-- Filter to only most recent records
+latest_records as (
+    select s.*
+    from source s
+    inner join most_recent mr
+        on s.rider_id = mr.rider_id
+        and s._dlt_load_id = mr.latest_load_id
+),
+
+renamed as (
+    select
+        -- Identity
+        rider_id,
+        name,
+        gender,
+        country,
+        age,
+        height,
+        coalesce(weight, weight__v_double)::float as weight,
+
+        -- Category & FTP
+        zp_category,
+        zp_ftp,
+
+        -- Power watts/kg - renamed from power__wkg[duration]
+        power__wkg5::float as watts_kg_5s,
+        power__wkg15::float as watts_kg_15s,
+        power__wkg30::float as watts_kg_30s,
+        power__wkg60::float as watts_kg_60s,
+        power__wkg120::float as watts_kg_120s,
+        power__wkg300::float as watts_kg_300s,
+        power__wkg1200::float as watts_kg_1200s,
+
+        -- Power watts - renamed from power__w[duration]
+        power__w5::float as watts_5s,
+        power__w15::float as watts_15s,
+        power__w30::float as watts_30s,
+        power__w60::float as watts_60s,
+        power__w120::float as watts_120s,
+        power__w300::float as watts_300s,
+        power__w1200::float as watts_1200s,
+
+        -- Power analysis
+        power__cp::float as critical_power,
+        power__awc::float as anaerobic_work_capacity,
+        power__compound_score::float as compound_score,
+        power__power_rating::float as power_rating,
+
+        -- Race data - last
+        race__last__rating::float as last_rating,
+        race__last__date::bigint as last_date,
+        race__last__mixed__category as last_mixed_category,
+        race__last__mixed__number::int as last_mixed_number,
+
+        -- Race data - current
+        race__current__rating::float as current_rating,
+        race__current__date::bigint as current_date,
+        race__current__mixed__category as current_mixed_category,
+        race__current__mixed__number::int as current_mixed_number,
+
+        -- Race data - max30
+        race__max30__rating::float as max30_rating,
+        race__max30__date::bigint as max30_date,
+        race__max30__expires::bigint as max30_expires,
+        race__max30__mixed__category as max30_mixed_category,
+        race__max30__mixed__number::int as max30_mixed_number,
+
+        -- Race data - max90
+        race__max90__rating::float as max90_rating,
+        race__max90__date::bigint as max90_date,
+        race__max90__expires::bigint as max90_expires,
+        race__max90__mixed__category as max90_mixed_category,
+        race__max90__mixed__number::int as max90_mixed_number,
+
+        -- Race statistics
+        race__finishes::int as finishes,
+        race__dnfs::int as dnfs,
+        race__wins::int as wins,
+        race__podiums::int as podiums,
+
+        -- Handicaps
+        handicaps__profile__flat::float as handicap_flat,
+        handicaps__profile__rolling::float as handicap_rolling,
+        handicaps__profile__hilly::float as handicap_hilly,
+        handicaps__profile__mountainous::float as handicap_mountainous,
+
+        -- Phenotype scores
+        phenotype__scores__sprinter::float as sprinter_score,
+        phenotype__scores__puncheur::float as puncheur_score,
+        phenotype__scores__pursuiter::float as pursuiter_score,
+        phenotype__scores__climber::float as climber_score,
+        phenotype__scores__tt::float as tt_score,
+        phenotype__value as phenotype,
+        phenotype__bias::float as phenotype_bias,
+
+        -- Club
+        club__id::int as club_id,
+        club__name as club_name,
+
+        -- DLT metadata
+        _dlt_load_id,
+        _dlt_id
+
+    from latest_records
+)
+
+select * from renamed
+  );
+
+[0m12:03:47.760667 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:03:47.765029 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m12:03:47.765385 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+alter view "analytics"."main_staging"."stg_riders" rename to "stg_riders__dbt_backup"
+[0m12:03:47.766309 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.768575 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m12:03:47.768958 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+alter view "analytics"."main_staging"."stg_riders__dbt_tmp" rename to "stg_riders"
+[0m12:03:47.770488 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.779730 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: COMMIT
+[0m12:03:47.780163 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m12:03:47.780455 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: COMMIT
+[0m12:03:47.787832 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m12:03:47.792222 [debug] [Thread-1 (]: Using duckdb connection "model.zwift_scout.stg_riders"
+[0m12:03:47.792656 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.stg_riders"} */
+
+      drop view if exists "analytics"."main_staging"."stg_riders__dbt_backup" cascade
+    
+[0m12:03:47.798058 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m12:03:47.800220 [debug] [Thread-1 (]: On model.zwift_scout.stg_riders: Close
+[0m12:03:47.802557 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fc891220>]}
+[0m12:03:47.803074 [info ] [Thread-1 (]: 1 of 3 OK created sql view model main_staging.stg_riders ....................... [[32mOK[0m in 0.12s]
+[0m12:03:47.803574 [debug] [Thread-1 (]: Finished running node model.zwift_scout.stg_riders
+[0m12:03:47.805026 [debug] [Thread-3 (]: Began running node model.zwift_scout.int_riders
+[0m12:03:47.805623 [info ] [Thread-3 (]: 2 of 3 START sql view model main_intermediate.int_riders ....................... [RUN]
+[0m12:03:47.806105 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_analytics_main_core, now model.zwift_scout.int_riders)
+[0m12:03:47.806410 [debug] [Thread-3 (]: Began compiling node model.zwift_scout.int_riders
+[0m12:03:47.808652 [debug] [Thread-3 (]: Writing injected SQL for node "model.zwift_scout.int_riders"
+[0m12:03:47.809252 [debug] [Thread-3 (]: Began executing node model.zwift_scout.int_riders
+[0m12:03:47.811459 [debug] [Thread-3 (]: Writing runtime sql for node "model.zwift_scout.int_riders"
+[0m12:03:47.811960 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m12:03:47.812234 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: BEGIN
+[0m12:03:47.812494 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:03:47.813499 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.813909 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m12:03:47.814197 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.int_riders"} */
+
+  
+  create view "analytics"."main_intermediate"."int_riders__dbt_tmp" as (
+    
+
+with staged as (
+    select * from "analytics"."main_staging"."stg_riders"
+),
+
+transformed as (
+    select
+        *,
+
+        -- Convert _dlt_load_id to human-readable timestamp
+        -- _dlt_load_id format is Unix timestamp with microseconds (e.g., 1759308455.704154)
+        to_timestamp(cast(split_part(_dlt_load_id, '.', 1) as bigint)) as loaded_at,
+
+        -- Calculate FTP per kg
+        case
+            when weight > 0 then round(zp_ftp / weight, 2)
+            else null
+        end as ftp_per_kg,
+
+        -- Convert race dates from Unix timestamp to timestamp
+        to_timestamp(last_date) as last_race_at,
+        to_timestamp(current_date) as current_race_at,
+        to_timestamp(max30_date) as max30_race_at,
+        to_timestamp(max30_expires) as max30_expires_at,
+        to_timestamp(max90_date) as max90_race_at,
+        to_timestamp(max90_expires) as max90_expires_at,
+
+        -- Calculate win rate
+        case
+            when finishes > 0 then round((wins::float / finishes) * 100, 2)
+            else 0
+        end as win_rate_pct,
+
+        -- Calculate podium rate
+        case
+            when finishes > 0 then round((podiums::float / finishes) * 100, 2)
+            else 0
+        end as podium_rate_pct,
+
+        -- Calculate DNF rate
+        case
+            when (finishes + dnfs) > 0 then round((dnfs::float / (finishes + dnfs)) * 100, 2)
+            else 0
+        end as dnf_rate_pct
+
+    from staged
+)
+
+select * from transformed
+  );
+
+[0m12:03:47.818789 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:03:47.821089 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m12:03:47.821537 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.int_riders"} */
+alter view "analytics"."main_intermediate"."int_riders" rename to "int_riders__dbt_backup"
+[0m12:03:47.822645 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.824740 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m12:03:47.825046 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.int_riders"} */
+alter view "analytics"."main_intermediate"."int_riders__dbt_tmp" rename to "int_riders"
+[0m12:03:47.825935 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.827233 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: COMMIT
+[0m12:03:47.827547 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m12:03:47.827795 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: COMMIT
+[0m12:03:47.833742 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m12:03:47.835559 [debug] [Thread-3 (]: Using duckdb connection "model.zwift_scout.int_riders"
+[0m12:03:47.835868 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.int_riders"} */
+
+      drop view if exists "analytics"."main_intermediate"."int_riders__dbt_backup" cascade
+    
+[0m12:03:47.841200 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:03:47.842444 [debug] [Thread-3 (]: On model.zwift_scout.int_riders: Close
+[0m12:03:47.843013 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fd58a690>]}
+[0m12:03:47.843532 [info ] [Thread-3 (]: 2 of 3 OK created sql view model main_intermediate.int_riders .................. [[32mOK[0m in 0.04s]
+[0m12:03:47.843998 [debug] [Thread-3 (]: Finished running node model.zwift_scout.int_riders
+[0m12:03:47.845089 [debug] [Thread-2 (]: Began running node model.zwift_scout.riders
+[0m12:03:47.845505 [info ] [Thread-2 (]: 3 of 3 START sql table model main_core.riders .................................. [RUN]
+[0m12:03:47.845904 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_analytics_main_intermediate, now model.zwift_scout.riders)
+[0m12:03:47.846177 [debug] [Thread-2 (]: Began compiling node model.zwift_scout.riders
+[0m12:03:47.849385 [debug] [Thread-2 (]: Writing injected SQL for node "model.zwift_scout.riders"
+[0m12:03:47.849951 [debug] [Thread-2 (]: Began executing node model.zwift_scout.riders
+[0m12:03:47.864312 [debug] [Thread-2 (]: Writing runtime sql for node "model.zwift_scout.riders"
+[0m12:03:47.865000 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.865309 [debug] [Thread-2 (]: On model.zwift_scout.riders: BEGIN
+[0m12:03:47.865567 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:03:47.866564 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.867037 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.867366 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main_core"."riders__dbt_tmp"
+  
+    as (
+      
+
+with intermediate as (
+    select * from "analytics"."main_intermediate"."int_riders"
+),
+
+final as (
+    select
+        -- Identity
+        rider_id,
+        name,
+        gender,
+        country,
+        age,
+        height,
+        weight,
+
+        -- Category & Performance
+        zp_category as category,
+        zp_ftp as ftp,
+        ftp_per_kg,
+
+        -- Key power metrics (most commonly used)
+        watts_kg_5s,
+        watts_kg_60s,
+        watts_kg_300s,
+        watts_5s,
+        watts_60s,
+        watts_300s,
+        critical_power,
+        power_rating,
+
+        -- Current racing status
+        current_rating,
+        current_race_at,
+        current_mixed_category,
+        current_mixed_number,
+
+        -- 30-day peak performance
+        max30_rating,
+        max30_race_at,
+        max30_expires_at,
+
+        -- Race statistics
+        finishes,
+        dnfs,
+        wins,
+        podiums,
+        win_rate_pct,
+        podium_rate_pct,
+        dnf_rate_pct,
+
+        -- Rider type
+        phenotype as rider_type,
+        phenotype_bias,
+        sprinter_score,
+        puncheur_score,
+        pursuiter_score,
+        climber_score,
+        tt_score,
+
+        -- Terrain strengths
+        handicap_flat,
+        handicap_rolling,
+        handicap_hilly,
+        handicap_mountainous,
+
+        -- Club
+        club_id,
+        club_name,
+
+        -- Metadata
+        loaded_at,
+        _dlt_id as record_id
+
+    from intermediate
+)
+
+select * from final
+    );
+  
+  
+[0m12:03:47.897381 [debug] [Thread-2 (]: SQL status: OK in 0.030 seconds
+[0m12:03:47.901707 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.902137 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_core'
+      AND table_name = 'riders'
+  
+[0m12:03:47.903486 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.904929 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.905335 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_core'
+      AND table_name = 'riders'
+  
+[0m12:03:47.906764 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.909327 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.909676 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+alter table "analytics"."main_core"."riders" rename to "riders__dbt_backup"
+[0m12:03:47.910493 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:03:47.912499 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.912811 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+alter table "analytics"."main_core"."riders__dbt_tmp" rename to "riders"
+[0m12:03:47.913576 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:03:47.917412 [debug] [Thread-2 (]: On model.zwift_scout.riders: COMMIT
+[0m12:03:47.917819 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.918136 [debug] [Thread-2 (]: On model.zwift_scout.riders: COMMIT
+[0m12:03:47.924692 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m12:03:47.926587 [debug] [Thread-2 (]: Using duckdb connection "model.zwift_scout.riders"
+[0m12:03:47.926908 [debug] [Thread-2 (]: On model.zwift_scout.riders: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "zwift_scout", "target_name": "dev", "node_id": "model.zwift_scout.riders"} */
+
+      drop table if exists "analytics"."main_core"."riders__dbt_backup" cascade
+    
+[0m12:03:47.932875 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m12:03:47.934057 [debug] [Thread-2 (]: On model.zwift_scout.riders: Close
+[0m12:03:47.936121 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd8a7e9de-be4b-4e2b-b1f7-e7b53680e172', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80bbff7350>]}
+[0m12:03:47.936789 [info ] [Thread-2 (]: 3 of 3 OK created sql table model main_core.riders ............................. [[32mOK[0m in 0.09s]
+[0m12:03:47.937304 [debug] [Thread-2 (]: Finished running node model.zwift_scout.riders
+[0m12:03:47.939658 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:03:47.940135 [debug] [MainThread]: On master: BEGIN
+[0m12:03:47.940523 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:03:47.941280 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:03:47.941538 [debug] [MainThread]: On master: COMMIT
+[0m12:03:47.941758 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:03:47.941959 [debug] [MainThread]: On master: COMMIT
+[0m12:03:47.942411 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:03:47.942667 [debug] [MainThread]: On master: Close
+[0m12:03:47.943025 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:03:47.943252 [debug] [MainThread]: Connection 'model.zwift_scout.int_riders' was properly closed.
+[0m12:03:47.943443 [debug] [MainThread]: Connection 'model.zwift_scout.stg_riders' was properly closed.
+[0m12:03:47.943619 [debug] [MainThread]: Connection 'model.zwift_scout.riders' was properly closed.
+[0m12:03:47.943875 [info ] [MainThread]: 
+[0m12:03:47.944152 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 0.45 seconds (0.45s).
+[0m12:03:47.944759 [debug] [MainThread]: Command end result
+[0m12:03:47.956326 [debug] [MainThread]: Wrote artifact WritableManifest to /home/robgriffin247/vibe_code/dbt_project/target/manifest.json
+[0m12:03:47.957716 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/robgriffin247/vibe_code/dbt_project/target/semantic_manifest.json
+[0m12:03:47.961774 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/robgriffin247/vibe_code/dbt_project/target/run_results.json
+[0m12:03:47.962054 [info ] [MainThread]: 
+[0m12:03:47.962348 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:03:47.962607 [info ] [MainThread]: 
+[0m12:03:47.962851 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m12:03:47.963698 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.1819988, "process_in_blocks": "712", "process_kernel_time": 0.616766, "process_mem_max_rss": "179688", "process_out_blocks": "3072", "process_user_time": 2.451046}
+[0m12:03:47.964056 [debug] [MainThread]: Command `dbt run` succeeded at 12:03:47.963979 after 1.18 seconds
+[0m12:03:47.964340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fb2d1760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80fb962e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e80f0b9bdd0>]}
+[0m12:03:47.964654 [debug] [MainThread]: Flushing usage events
+[0m12:03:48.394799 [debug] [MainThread]: An error was encountered while trying to flush usage events

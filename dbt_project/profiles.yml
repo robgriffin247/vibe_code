@@ -1,0 +1,14 @@
+zwift_scout:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/analytics.duckdb
+      schema: main
+      threads: 4
+      extensions:
+        - httpfs
+        - parquet
+      attach:
+        - path: ../data/raw.duckdb
+          alias: raw
